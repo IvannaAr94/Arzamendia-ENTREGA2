@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio | TiendaOnlineFerit</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="bg-page">
+<!-- ================= HEADER / NAV ================= -->
+<header class="site-header shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-header">
+    <div class="container d-flex align-items-center gap-3">
+
+      <!-- Branding / Logo -->
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
+        <img
+          src="../assets/img/icon2.jpg"
+          alt="Logo TiendaOnlineFerit"
+          class="brand-logo rounded-4 border border-1 border-secondary"
+        >
+        <span class="brand-text">TiendaOnlineFerit</span>
+      </a>
+
+      <!-- Botón hamburguesa mobile (componente Bootstrap) -->
+      <button
+        class="navbar-toggler ms-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Mostrar menú"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links de navegación -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center text-lg-start">
+          <li class="nav-item">
+            <a class="nav-link active" href="../index.html" aria-current="page">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/about.html">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/productos.html">Productos</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<!-- ================= MAIN  -->
+<main>
+  <!-- ================= HERO / PORTADA ================= -->
+  <section class="hero-section py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+
+        <!-- Texto principal -->
+        <div class="col-12 col-lg-6">
+          <h1 class="display-5 fw-bold hero-title">
+            Bienvenidos a <span class="brand-accent">TiendaOnlineFerit</span>
+          </h1>
+          <p class="lead hero-subtitle">
+            La mejor calidad para tus mascotas. Productos cómodos, seguros y
+            con envío rápido.
+          </p>
+
+          <!-- Botones de acción -->
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn-main" href="../pages/about.html">Sobre Nosotros</a>
+            <a class="btn-outline-main" href="../pages/productos.html">Ver Productos</a>
+          </div>
+
+          <!-- Ejemplo explícito de box model -->
+          <div class="box-example mt-4">
+            <strong>Destacado:</strong> Productos aprobados por veterinarios y dueños exigentes 🐾
+          </div>
+        </div>
+
+        <!-- IMG decorativa / héroe (puede ser una de tus fotos de productos) -->
+        <div class="col-12 col-lg-6 text-center">
+          <img
+            src="../assets/img/mascotassi.jpeg"
+            alt="mascotassi"
+            
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LISTA DE PRODUCTOS - CAMAS Y MOISES ============= -->
+
+  <section class="py-5 productos-destacados">
+    <div class="container">
+      <!-
+      <header class="text-center mb-4">
+        <h2 class="section-title fw-bold">Camas y Moisés</h2> <br>
+        <!-- <p class="section-desc">
+          La mejor <strong>Calidad</strong> Y <strong>Precio</strong> tu mascota
+        </p> -->
+      </header>
+
+      <div class="row g-4">
+        <!-- Producto 1 ============= -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/Moisés Prato Beige.webp"
+              alt="Cama moisés beige acolchada para gatos"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Moisés Prato Beige
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Súper mullida. Base antideslizante. Lavable.
+              </p>
+              <h3>$30.700</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/cama redonda 56cm grisy blanco.webp"
+              alt="camaredonda"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Cama redonda Suave Gris
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Ideal invierno. Borde elevado para que apoye la cabeza.
+              </p>
+              <h3>$67.400</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/moisess.webp"
+              alt="moisess"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Moisés Prato Gris Talle Medium 65 x 50 x 20 cm Letto Pets
+              </h3>
+              <p class="producto-desc flex-grow-1">
+              El Moises Prato Letto Pets está diseñado para ofrecer comodidad y relajación 
+              a tu perro o a tu gato a la hora de descansar. 
+              </p>
+              <h3>$80.700</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+<!-- Segundo bloque TRANSPORTADORAS ******************************************************--> 
+<section class="py-5 productos-destacados">
+    <div class="container">
+      <!-
+      <header class="text-center mb-4">
+        <h2 class="section-title fw-bold">Transportadoras</h2> <br>
+        <!-- <p class="section-desc">
+        La mejor calidad. Ideales para gatos y perros.
+        </p> -->
+      </header>
+
+      <div class="row g-4">
+        <!-- Producto 4 ===========* -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/transportadora.webp"
+              alt="transportadora"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Transportadora
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Mochila con Capsula para Mascotas Hasta 10 kg Rash-On
+              </p>
+              <h3>$75.700</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 5 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/transportadora1.webp"
+              alt="transportadora1"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Transportadora
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Ideal invierno. Borde elevado para que apoye la cabeza.
+              </p>
+              <h3>$90.300</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 6 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/transportadora2.webp"
+              alt="transportadora2"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Mochila Beepaw Rosa
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Transporte seguro 44×30×17 cm. Ideal viajes / vet.
+              </p>
+              <h3>$40.800</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+
+      <!-- CARD 3 - SECCION COMEDEROS Y BEBEDEROS  **********************************************************-->
+      
+  <section class="py-5 productos-destacados">
+    <div class="container">
+      <!-
+      <header class="text-center mb-4">
+        <h2 class="section-title fw-bold">Comederos y Bebederos</h2> <br>
+        <!-- <p class="section-desc">
+          La mejor <strong>Calidad</strong> Y <strong>Precio</strong> tu mascota
+        </p> -->
+      </header>
+
+      <div class="row g-4">
+        <!-- Producto 7 ============= -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/bebedero.webp"
+              alt="bebedero"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Bebedero Interactivo para perros y gatos de color negro. 
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Es el cuenco de agua diseñado para 
+              garantizar una hidratación segura y sin desorden. Su sistema de bebida lenta con disco flotante ajustable evita 
+              derrames 
+              </p>
+              <h3>$25.560</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 8 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/bebederoycomedero.webp"
+              alt="bebederoycomedero"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Comedero-Bebedero Doble de Acero Inoxidable 2 x 0,45 litros Diámetro 12 cm Trixie
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                El Comedero De Acero Inoxidable con borde siliconado, está diseñado para que tu perro o gato pueda disfrutar de 
+              su comida de una manera cómoda y ordenada. 
+              </p>
+              <h3>$12.300</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 9 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/comedero.webp"
+              alt="comederoweb"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Comedero
+              </h3>
+              <p class="producto-desc flex-grow-1">
+              Comedero De Acero Inoxidable con borde siliconado para perros y gatos. 
+              Cuenta con una base de goma antideslizante, que asegura una mayor estabilidad
+              a tu mascota mientras come. Es muy resistente y duradero, ademas el acero inoxidable
+              es muy facil de lavar.</
+              </p>
+              <h3>$12.300</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+<!-- CARD 4 - PLACAS IDENTIFICADORAS ************************************************-->
+      <section class="py-5 productos-destacados">
+    <div class="container">
+      <!-
+      <header class="text-center mb-4">
+        <h2 class="section-title fw-bold">Placas identificatorias</h2> <br>
+        <!-- <p class="section-desc">
+          La mejor <strong>Calidad</strong> Y <strong>Precio</strong> tu mascota
+        </p> -->
+      </header>
+
+      <div class="row g-4">
+        <!-- Producto 10 ============= -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/placas.avif"
+              alt="bebedero"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Bonita placa de identificación personalizada para perro 
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Pplaca de identificación con forma de hueso, placa de identificación con nombre, placa de identificación 
+                para collar, placa de identificación para cachorro, placa de identificación de acero inoxidable personalizada. 
+              </p>
+              <h3>$9.000</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 11 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/placas1.webp"
+              alt="bebederoycomedero"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Placa de identificación personalizada con forma de hueso, placa de identificación grabada
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                Placa para collar, placa con nombre y teléfono, placa de identificación, placa con nombre, 
+                placas únicas para mascotas. 
+              </p>
+              <h3>$9.000</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 12 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/placas2.webp"
+              alt="placas2"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Llavero de acero inoxidable con boceto, regalo único para amantes de las mascotas.
+              </h3>
+              <p class="producto-desc flex-grow-1">
+              Llavero con retrato de mascota grabado personalizado, placa conmemorativa con imagen 
+              de perro y gato personalizada
+              </p>
+              <h3>$9.000</h3>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- CARD 5 - PLACAS IDENTIFICADORAS ************************************************-->
+      
+      <header class="text-center my-5">
+        <h2 class="section-title fw-bold">Clientes Felices</h2> 
+        <!-- <p class="section-desc">
+          Grabado con nombre y teléfono. Distintos diseños.
+        </p> -->
+      </header>
+
+      <div class="row g-4">
+        <!-- Producto 13 ============= -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/foto.avif"
+              alt="foto"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Titán
+              </h3>
+              <p class="producto-desc flex-grow-1">
+                ***** estrellas  <br>  
+              Color y tamaño: Silver-L  <br>
+              Grabado: Engraving Front&Back <br>
+              Súper lindo y me encanta!!!
+              </p>
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 14 ============= -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img
+              class="producto-img"
+              src="../assets/img/foto1.jpg"
+              alt="foto1"
+            >
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+              <h3 class="producto-nombre h5">
+                Bella
+              </h3>
+              <p class="producto-desc flex-grow-1">
+              ***** estrellas  <br>  
+              Color y tamaño: Silver-L  <br>
+              Grabado: Engraving Front&Back <br>
+              Súper lindo y me encanta!!!
+              </p>
+              <a href="../pages/about.html" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+              <h3></h3>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 15 ===============-->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="producto-card h-100 d-flex flex-column">
+            <img class="producto-img" src="../assets/img/foto2.jpg" alt="foto2">
+
+            <div class="p-3 flex-grow-1 d-flex flex-column">
+            <h3 class="producto-nombre h5">Blacky</h3>
+            <p>***** estrellas  <br>  
+              Color y tamaño: Silver-L  <br>
+              Grabado: Engraving Front&Back <br>
+              Súper lindo y me encanta!!!
+            </p>
+
+              <a href="#" class="btn-main w-100 text-center mt-3">
+                Ver productos
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--Me di cuenta que en ves de VER PRODUCTO tengo que poner COMO COMPRAR O COMPRAR en el boton.. ahora no tengo tienpo
+pero para la  proxima entrega lo agrego, por que tengo que hacer una pag mas y ya hice 3 como pidieron.-->
+
+<!-- ========= FOOTER ========= -->
+<footer class="site-footer py-4 border-top bg-footer">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+
+      <div class="text-footer">
+        <strong>TiendaOnlineFerit</strong>
+        <small> © 2025</small>
+      </div>
+
+      <div class="d-flex flex-column text-footer">
+        <div class="d-flex gap-2 flex-wrap">
+          <a class="footer-link" href="https://www.instagram.com/" target="_blank" >Instagram</a> · 
+          <a class="footer-link" href="https://www.facebook.com/" target="_blank" >Facebook</a> · 
+          <a class="footer-link" href="../pages/productos.html">Productos</a>
+        </div>
+        <small>Envíos en zona ✦ Atención personalizada</small>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

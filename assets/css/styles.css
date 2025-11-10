@@ -1,0 +1,332 @@
+/* ==============================
+PALETA DE COLORES DEL SITIO
+============================== */
+:root {
+  --color1: #630e94be; /* violeta oscuro (texto principal / header fondo) */
+  --color2: #654166;   /* violeta medio */
+  --color3: #a25f89;   /* rosa-violeta medio */
+  --color4: #d571db;   /* rosa vibrante */
+  --color5: #c077c5;   /* rosa pastel claro */
+
+  --bg-page: #b4a9a9;
+  --bg-header: var(--color1);
+  --bg-footer: var(--color1);
+
+  --text-light: #faf8f8;  /* color palabras (icono, inicio, sobre nosotros, prod) */
+  --text-dark: #5c2578;
+
+  /* radios (grande, mediano y pequeño) */
+  --radius-lg: 1rem;
+  --radius-md: .75rem;
+  --radius-sm: .5rem;
+
+  --shadow-soft: 0 10px 24px rgba(0,0,0,.08);     /* sombra-suave */
+  --shadow-card: 0 16px 32px rgba(65,48,75,.15);  /* sombra-tarjeta */
+}
+
+/* ==============================
+RESET SUAVE / BASE
+============================== */
+body {
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Evitar scroll horizontal raro */
+body {
+  overflow-x: hidden;
+}
+
+.bg-page {
+  background-color: var(--bg-page);
+}
+
+/* ==============================
+HEADER / NAV
+============================== */
+.bg-header {
+  background-color: var(--bg-header);
+  color: var(--text-light);
+}
+
+/* Logo en el header */
+.brand-logo {
+  width: 48px;   /* ancho */
+  height: 48px;  /* alto */
+  object-fit: cover; /* ajustar imagen dentro del recuadro */
+  /* el borde ya lo trae del HTML con border-secondary */
+}
+
+/* Texto de marca */
+.brand-text {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Navbar links */
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--color4); /* rosa fuerte para hover/activo */
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+/* ==============================
+HERO / PORTADA
+============================== */
+.hero-section {
+  /* fondo suave con un radial que usa la paleta */
+  background:
+    radial-gradient(
+      900px 500px at 20% -10%,
+      rgba(162, 95, 137, 0.28),
+      transparent 70%
+    ),
+    linear-gradient(
+      to bottom right,
+      var(--color5) 0%,
+      #ffffff 60%
+    );
+  color: var(--color1);
+}
+
+.hero-title {
+  color: var(--color1);
+}
+
+.brand-accent {
+  color: var(--color3);
+  background-image: linear-gradient(
+    90deg,
+    var(--color3),
+    var(--color4)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  color: var(--color2);
+  font-size: 1.1rem;
+  max-width: 40ch;
+}
+
+.hero-img {
+  max-width: 320px;
+  background-color: var(--text-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 2px solid var(--color5);
+  margin-inline: auto;
+}
+
+/* ==============================
+BOTONES PERSONALIZADOS
+============================== */
+.btn-main {
+  display: inline-block;
+  background-image: linear-gradient(
+    90deg,
+    var(--color3),
+    var(--color4)
+  );
+  color: var(--text-light);
+  font-weight: 600;
+  padding: .6rem 1rem;
+  border-radius: var(--radius-md);
+  border: 0;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  font-size: .95rem;
+  line-height: 1.2;
+  transition: all .2s ease;
+}
+
+.btn-main:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.btn-outline-main {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color3);
+  font-weight: 600;
+  padding: .6rem 1rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: .95rem;
+  line-height: 1.2;
+  border: 2px solid var(--color3);
+  transition: all .2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-outline-main:hover {
+  background-color: var(--color3);
+  color: var(--text-light);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+}
+
+/* ==============================
+BOX MODEL DEMO
+============================== */
+.box-example {
+  background-color: var(--text-light);
+  border: 2px solid var(--color3);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;   /* padding (box model) */
+  margin-top: 1rem;        /* margin (box model) */
+  max-width: 32ch;
+  color: var(--color1);
+  font-size: .9rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==============================
+SECCIÓN PRODUCTOS DESTACADOS
+============================== */
+.productos-destacados {
+  background-color: #cc92e0;
+  color: var(--text-dark);
+}
+
+.section-title {
+  color: var(--color1);
+  text-align: center;
+}
+
+.section-desc {
+  font-size: .95rem;
+  color: var(--color2);
+  text-align: center;
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+/* ---- Cards de productos ---- */
+.producto-card {
+  background-color: var(--text-light);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color5);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: var(--color5);
+  border-bottom: 2px solid var(--color5);
+}
+
+.producto-nombre {
+  color: var(--color1);
+  font-weight: 600;
+}
+
+.producto-desc {
+  color: var(--color2);
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+/* ---- Card de info/envíos ---- */
+.info-card {
+  background-color: var(--color5);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color4);
+  box-shadow: var(--shadow-card);
+}
+
+.info-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border: 2px solid var(--color4);
+  border-radius: var(--radius-md);
+  background-color: var(--text-light);
+}
+
+.text-header {
+  color: var(--color1);
+}
+
+/* ==============================
+FOOTER
+============================== */
+.bg-footer {
+  background-color: var(--bg-footer);
+  color: var(--text-light);
+}
+
+.text-footer {
+  color: var(--text-light);
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.footer-link {
+  color: var(--color4);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.footer-link:hover {
+  color: var(--color5);
+  text-decoration: underline;
+}
+
+/* ==============================
+RESPONSIVE / MEDIA QUERIES
+Mobile-first → ajustamos en pantallas grandes
+============================== */
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 46ch;
+  }
+
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-img {
+    max-width: 360px;
+  }
+
+  .box-example {
+    max-width: 36ch;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
