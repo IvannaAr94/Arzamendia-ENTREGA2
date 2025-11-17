@@ -1,0 +1,875 @@
+/* ==================================================
+  PALETA DE COLORES Y VARIABLES GENERALES
+  (CSS compilado desde SASS)
+   ================================================== */
+
+:root {
+  --color1: #630e94be; /* violeta oscuro (texto principal / fondo header) */
+  --color2: #654166;   /* violeta medio */
+  --color3: #a25f89;   /* rosa-violeta medio */
+  --color4: #d571db;   /* rosa vibrante */
+  --color5: #c077c5;   /* rosa pastel claro */
+
+  --bg-page: #b4a9a9;
+  --bg-header: var(--color1);
+  --bg-footer: var(--color1);
+
+  --text-light: #faf8f8;  /* texto claro (header, links, etc.) */
+  --text-dark: #5c2578;   /* texto oscuro principal */
+
+  /* radios (grande, mediano y pequeño) */
+  --radius-lg: 1rem;
+  --radius-md: .75rem;
+  --radius-sm: .5rem;
+
+  --shadow-soft: 0 10px 24px rgba(0,0,0,.08);     /* sombra suave general */
+  --shadow-card: 0 16px 32px rgba(65,48,75,.15);  /* sombra para tarjetas */
+}
+
+/* ==================================================
+  RESET SUAVE / ESTILOS BASE
+   ================================================== */
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;     /* Evita scroll horizontal raro */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clase auxiliar para fondo general de la pag */
+.bg-page {
+  background-color: var(--bg-page);
+}
+
+/* ==================================================
+  HEADER / NAVBAR (Bootstrap + estilos propios)
+   ================================================== */
+
+.bg-header {
+  background-color: var(--bg-header);
+  color: var(--text-light);
+}
+
+/* Logo en el header */
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: cover; /* Ajusta la imagen al tamaño del recuadro */
+}
+
+/* Texto de marca */
+.brand-text {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Links de la navbar */
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Estado activo, enfoque y hover de los links */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--color4); /* rosa fuerte para hover/activo */
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+/* ==================================================
+  SECCIoN HERO / PORTADA
+   ================================================== */
+
+.hero-section {
+  /* Fondo con degradado y radial usando la paleta de colores */
+  background:
+    radial-gradient(
+      900px 500px at 20% -10%,
+      rgba(162, 95, 137, 0.28),
+      transparent 70%
+    ),
+    linear-gradient(
+      to bottom right,
+      var(--color5) 0%,
+      #ffffff 60%
+    );
+  color: var(--color1);
+}
+
+/* Titulo principal del hero */
+.hero-title {
+  color: var(--color1);
+}
+
+/* Texto resaltado con degradado en el nombre de la tienda */
+.brand-accent {
+  background-image: linear-gradient(
+    90deg,
+    var(--color3),
+    var(--color4)
+  );
+  /* Fallback para navegadores que NO soportan background-clip:text */
+  color: var(--color3);
+  /* Propiedad estandar + prefijo WebKit */
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* Para los que si soportan clip: text, el color pasa a ser transparente */
+  color: transparent;
+  font-weight: 700;
+}
+
+/* Subtitulo del hero */
+.hero-subtitle {
+  color: var(--color2);
+  font-size: 1.1rem;
+  max-width: 40ch;
+}
+
+/* ==================================================
+  BOTONES PERSONALIZADOS
+   ================================================== */
+
+.btn-main {
+  display: inline-block;
+  background-image: linear-gradient(
+    90deg,
+    var(--color3),
+    var(--color4)
+  );
+  color: var(--text-light);
+  font-weight: 600;
+  padding: .6rem 1rem;
+  border-radius: var(--radius-md);
+  border: 0;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  font-size: .95rem;
+  line-height: 1.2;
+  transition: all .2s ease;
+}
+
+.btn-main:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.btn-outline-main {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color3);
+  font-weight: 600;
+  padding: .6rem 1rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: .95rem;
+  line-height: 1.2;
+  border: 2px solid var(--color3);
+  transition: all .2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-outline-main:hover {
+  background-color: var(--color3);
+  color: var(--text-light);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+}
+
+/* ==================================================
+  BOX MODEL (CUADRO DESTACADO)
+   ================================================== */
+
+.box-example {
+  background-color: var(--text-light);
+  border: 2px solid var(--color3);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;   /* padding (box model) */
+  margin-top: 1rem;        /* margin (box model) */
+  max-width: 32ch;
+  color: var(--color1);
+  font-size: .9rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==================================================
+  SECCIoN PRODUCTOS DESTACADOS
+   ================================================== */
+
+.productos-destacados {
+  background-color: #cc92e0;
+  color: var(--text-dark);
+}
+
+/* Título y descripcion de seccion */
+.section-title {
+  color: var(--color1);
+  text-align: center;
+}
+
+.section-desc {
+  font-size: .95rem;
+  color: var(--color2);
+  text-align: center;
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+/* Tipografia de productos */
+.producto-nombre {
+  color: var(--color1);
+  font-weight: 600;
+}
+
+.producto-desc {
+  color: var(--color2);
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.producto-price {
+  color: var(--color1);
+  font-weight: 700;
+  margin-top: .25rem;
+}
+
+/* ==================================================
+  FOOTER
+   ================================================== */
+
+.bg-footer {
+  background-color: var(--bg-footer);
+  color: var(--text-light);
+}
+
+.text-footer {
+  color: var(--text-light);
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.footer-link {
+  color: var(--color4);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.footer-link:hover {
+  color: var(--color5);
+  text-decoration: underline;
+}
+
+/* ==================================================
+  LAYOUT BASE (SIN BOOTSTRAP)
+  Contenedores y grids propios
+   ================================================== */
+
+/* Espaciado vertical estandar de secciones */
+.section-y {
+  padding-block: 3rem;
+}
+
+/* Contenedor central reutilizable */
+.container-site {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* Grid de la seccion hero */
+.grid-hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Imagen dentro de la columna del hero */
+.hero-col img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Alineacion de la columna de imagen del hero */
+.hero-media {
+  text-align: center;
+}
+
+/* Fila de botones de la portada */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+/* Grid de cards de productos */
+.cards-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr; /* mobile */
+}
+
+.card-item {
+  display: block;
+}
+
+/* Tarjeta de producto */
+.producto-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Imagen de producto */
+.producto-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: var(--color5);
+  border-bottom: 2px solid var(--color5);
+}
+
+/* Contenido interno de la tarjeta de producto */
+.producto-body {
+  padding: 1rem 1rem 1.25rem;
+  display: grid;
+  gap: .5rem;
+}
+
+/* Botón ocupa todo el ancho de la card */
+.btn-block {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Tarjeta adicional de información (teléfono/WhatsApp) */
+.info-wrap {
+  margin-top: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.info-card {
+  width: min(760px, 100%);
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color4);
+  box-shadow: var(--shadow-card);
+}
+
+.info-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color4);
+  background-color: var(--text-light);
+}
+
+.text-header {
+  color: var(--color1);
+}
+
+/* Encabezado de sección generico */
+.section-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  margin: 0 0 .25rem 0;
+}
+
+.section-desc {
+  margin: 0;
+  opacity: .85;
+}
+
+/* Footer general */
+.site-footer {
+  padding-block: 1.25rem;
+  background: var(--bg-footer, #630e94be);
+  color: var(--text-light, #faf8f8);
+}
+
+/* Grid del footer */
+.footer-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+/* Fila de links del footer */
+.footer-linkrow {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Overrides simples de footer link */
+.footer-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Espaciado utilitario minimo */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* ==================================================
+  MEDIA QUERIES (RESPONSIVE DESIGN)
+  Mobile-first → ajustamos en pantallas grandes
+   ================================================== */
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 46ch;
+  }
+
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-img {
+    max-width: 360px;
+  }
+
+  .box-example {
+    max-width: 36ch;
+  }
+
+  /* Layout responsive: hero en dos columnas y cards en dos columnas */
+  .grid-hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+/* ==================================================
+  ANIMACION (LOADER)
+   ================================================== */
+
+.loader {
+  --main-size: 4em;
+  --text-color: #fbfbfb;
+  --shine-color: #6600ff;
+  --shadow-color: #e111f8de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  font-size: var(--main-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-color);
+  width: 7.3em;
+  height: 1em;
+  filter: drop-shadow(0 0 0.05em var(--shine-color));
+}
+
+/* Cada .text es una "franja" del loader */
+.loader .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* Las siguientes reglas recortan el texto en diferentes columnas
+  y ajustan opacidad/tamaño para el efecto 3D.
+*/
+.loader .text:nth-child(1) {
+  clip-path: polygon(0% 0%, 11.11% 0%, 11.11% 100%, 0% 100%);
+  font-size: calc(var(--main-size) / 20);
+  margin-left: -2.1em;
+  opacity: 0.6;
+}
+
+.loader .text:nth-child(2) {
+  clip-path: polygon(11.11% 0%, 22.22% 0%, 22.22% 100%, 11.11% 100%);
+  font-size: calc(var(--main-size) / 16);
+  margin-left: -0.98em;
+  opacity: 0.7;
+}
+
+.loader .text:nth-child(3) {
+  clip-path: polygon(22.22% 0%, 33.33% 0%, 33.33% 100%, 22.22% 100%);
+  font-size: calc(var(--main-size) / 13);
+  margin-left: -0.33em;
+  opacity: 0.8;
+}
+
+.loader .text:nth-child(4) {
+  clip-path: polygon(33.33% 0%, 44.44% 0%, 44.44% 100%, 33.33% 100%);
+  font-size: calc(var(--main-size) / 11);
+  margin-left: -0.05em;
+  opacity: 0.9;
+}
+
+.loader .text:nth-child(5) {
+  clip-path: polygon(44.44% 0%, 55.55% 0%, 55.55% 100%, 44.44% 100%);
+  font-size: calc(var(--main-size) / 10);
+  margin-left: 0em;
+  opacity: 1;
+}
+
+.loader .text:nth-child(6) {
+  clip-path: polygon(55.55% 0%, 66.66% 0%, 66.66% 100%, 55.55% 100%);
+  font-size: calc(var(--main-size) / 11);
+  margin-left: 0.05em;
+  opacity: 0.9;
+}
+
+.loader .text:nth-child(7) {
+  clip-path: polygon(66.66% 0%, 77.77% 0%, 77.77% 100%, 66.66% 100%);
+  font-size: calc(var(--main-size) / 13);
+  margin-left: 0.33em;
+  opacity: 0.8;
+}
+
+.loader .text:nth-child(8) {
+  clip-path: polygon(77.77% 0%, 88.88% 0%, 88.88% 100%, 77.77% 100%);
+  font-size: calc(var(--main-size) / 16);
+  margin-left: 0.98em;
+  opacity: 0.7;
+}
+
+.loader .text:nth-child(9) {
+  clip-path: polygon(88.88% 0%, 100% 0%, 100% 100%, 88.88% 100%);
+  font-size: calc(var(--main-size) / 20);
+  margin-left: 2.1em;
+  opacity: 0.6;
+}
+
+/* Animacion del texto interno (desplazamiento + brillo) */
+.loader .text span {
+  /* Aca controlo la velocidad: 4s = duracion del ciclo */
+  animation:
+    scrolling 4s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite,
+    shadow 4s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite;
+}
+
+/* Gradientes de color segun la franja del texto */
+.loader .text:nth-child(1) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 4%,
+    var(--shadow-color) 7%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(2) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 9%,
+    var(--shadow-color) 13%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(3) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 15%,
+    var(--shadow-color) 18%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(4) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    var(--shadow-color) 23%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(6) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 29%,
+    var(--text-color) 32%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(7) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 34%,
+    var(--text-color) 37%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(8) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 39%,
+    var(--text-color) 42%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(9) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 45%,
+    var(--text-color) 48%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Linea inferior del loader */
+.loader .line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 0.05em;
+  width: calc(var(--main-size) / 2);
+  margin-top: 0.9em;
+  border-radius: 0.05em;
+}
+
+.loader .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--text-color);
+  opacity: 0.3;
+}
+
+.loader .line::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--text-color);
+  border-radius: 0.05em;
+  transform: translateX(-90%);
+  animation: wobble 2s cubic-bezier(0.5, 0.8, 0.5, 0.2) infinite;
+}
+
+/* Animaciones clave */
+@keyframes wobble {
+  0% {
+    transform: translateX(-90%);
+  }
+  50% {
+    transform: translateX(90%);
+  }
+  100% {
+    transform: translateX(-90%);
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    background-position: -98% 0;
+  }
+  100% {
+    background-position: 102% 0;
+  }
+}
+
+
+/*=================================================*/
+
+/* ==================================================
+  ICONOS ANIMADOS DEL FOOTER (WhatsApp / Facebook / Instagram)
+  Basado en Uiverse.io, adaptado al sitio
+   ================================================== */
+
+.example-2 {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.example-2 .icon-content {
+  position: relative;
+  margin: 0 10px;
+}
+
+/* Tooltip que aparece arriba del icono */
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+/* Al hacer hover sobre el icono, mostramos el tooltip */
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+/* Boton redondo del icono */
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-color: #fff;
+  color: var(--color1);
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+/* Sombra y cambio de color al pasar el mouse */
+.example-2 .icon-content a:hover {
+  box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+}
+
+/* SVG (iconito) dentro del circulo */
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+}
+
+/* Fondo "relleno" que sube desde abajo */
+.example-2 .icon-content a .filled {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 0;
+
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+/* Cuando hay hover, el fondo rellena todo el circulo */
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+/* Colores por red social */
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}

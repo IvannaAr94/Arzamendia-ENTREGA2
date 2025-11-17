@@ -1,0 +1,26 @@
+/* VARIABLES */ 
+// sass/layout/_mq-desktop.scss
+// ----------------------------
+// Media queries para desktop (min-width: 1024px)
+
+@use "../utilidades/variables" as *;
+@use "../utilidades/mixin" as *;
+
+/* mq desktop */
+@media screen and (min-width: 1024px) {
+  /* Hero mas alto y con mas padding */
+.hero-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+  /* Cards en 3 columnas */
+.cards-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+  /* Footer en dos columnas: marca + links */
+.footer-grid {
+    grid-template-columns: 1fr auto;
+}
+}

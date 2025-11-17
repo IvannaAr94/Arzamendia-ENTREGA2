@@ -1,0 +1,24 @@
+// sass/main.scss
+// ========================================
+// Archivo PRINCIPAL de SASS.
+// Desde aca se importan todas las partes:
+//   - utilidades (variables, mixins)
+//   - base (reset)
+//   - layout (header, footer, media queries)
+//   - pages (home, etc.)
+// ========================================
+
+// 0) UTILIDADES COMPARTIDAS
+@use "utilidades/variables";
+@use "utilidades/mixin";
+
+// 1) ESTILOS BASE / RESET GLOBAL
+@use "base/reset";
+
+// 2) LAYOUT: HEADER, FOOTER Y MEDIA QUERIES
+@use "layout/header-footer";
+@use "layout/mq-tablet";
+@use "layout/mq-desktop";
+
+// 3) ESTILOS PARTICULARES DE PÁGINAS
+@use "pages/home";

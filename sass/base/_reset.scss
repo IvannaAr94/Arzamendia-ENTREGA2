@@ -1,0 +1,27 @@
+// sass/base/_reset.scss
+// -----------------------------
+// Reset global + estilos base
+// -----------------------------
+
+
+@use "../utilidades/variables" as *;
+
+// Reset 
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    // Estilos base del body
+    body {
+    background-color: $color-fondo;
+    color: $color-texto;
+    font-family: $font-base;
+    }
+
+    // Img fluidas
+    img {
+    max-width: 100%;
+    display: block;
+    }

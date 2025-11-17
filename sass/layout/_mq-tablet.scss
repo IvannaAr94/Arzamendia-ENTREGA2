@@ -1,0 +1,35 @@
+// variables
+//sass/layout/_mq-tablet.scss
+// ---------------------------
+// Media queries para tablet (min-width: 768px)
+
+@use "../utilidades/variables" as *;
+@use "../utilidades/mixin" as *;
+
+/* mq tablet base */
+@media screen and (min-width: 768px) {
+  /* Ejemplo: ajustar tamaño de logo en tablet */
+.brand-logo {
+    width: 56px;
+    height: 56px;
+}
+
+  /* Hero en tablet: un poco mas grande el texto */
+.hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 46ch;
+}
+
+.box-example {
+    max-width: 36ch;
+}
+
+  /* Grids: 2 columnas en cards y hero */
+.grid-hero {
+    grid-template-columns: 1fr 1fr;
+}
+
+.cards-grid {
+    grid-template-columns: 1fr 1fr;
+}
+}

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos | TiendaOnlineFerit</title>
+
+  <!-- Bootstrap CSS (solo navbar) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- CSS propio compilado -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+</head>
+
+<body class="bg-page">
+  <!-- ================= HEADER / NAV =================
+Encabezado reutilizado con navbar responsiva.
+  -->
+  <header class="site-header shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-header">
+      <div class="container d-flex align-items-center gap-3">
+
+        <!-- Logo + nombre de la tienda -->
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
+          <img
+            src="../assets/img/icon2.jpg"
+            alt="Logo TiendaOnlineFerit"
+            class="brand-logo rounded-4 border border-1 border-secondary"
+          >
+          <span class="brand-text">TiendaOnlineFerit</span>
+        </a>
+
+        <!-- Boton hamburguesa (mobile) -->
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Mostrar menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links de navegacion -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center text-lg-start">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="productos.html" aria-current="page">Productos</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN =================
+Contenido principal de la página de productos. -->
+  <main>
+    <!-- ============ HERO / PRESENTACIoN ============ -->
+    <section class="hero-section section-y">
+      <div class="container-site">
+        <div class="grid-hero">
+
+          <!-- Texto principal del hero -->
+          <div class="hero-col">
+            <h1 class="display-5 fw-bold hero-title">
+              Bienvenidos a <span class="brand-accent">TiendaOnlineFerit</span>
+            </h1>
+            <p class="lead hero-subtitle">
+              La mejor calidad para tus mascotas. Productos cómodos, seguros y
+              con envío rápido.
+            </p>
+
+            <!-- Botones de accion -->
+            <div class="btn-row">
+              <a class="btn-main" href="about.html">Sobre Nosotros</a>
+              <a class="btn-outline-main" href="../index.html">Ver productos</a>
+            </div>
+
+            <!-- Recuadro destacado -->
+            <div class="box-example mt-4">
+              <p>
+                <strong>Destacado:</strong>
+                Productos aprobados por veterinarios y dueños exigentes 🐾
+              </p>
+            </div>
+          </div>
+
+          <!-- Imagen ilustrativa -->
+          <div class="hero-col hero-media">
+            <img
+              src="../assets/img/mascotassi.jpeg"
+              alt="Gato y perro junto a productos de TiendaOnlineFerit"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCION 1: CAMAS Y MOISES ============ -->
+    <section class="section-y productos-destacados">
+      <div class="container-site">
+        <header class="section-header">
+          <h2 class="section-title fw-bold">Camas y Moisés</h2>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Producto 1 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/moises-pratobeige.webp"
+                alt="Cama moisés beige acolchada para gatos"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Moisés Prato Beige</h3>
+                <p class="producto-desc">
+                  Súper mullida, base antideslizante y totalmente lavable. Ideal para gatos y perros pequeños.
+                </p>
+                <p class="producto-price">$30.700</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 2 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/camaredonda56cmgrisyblan.webp"
+                alt="Cama redonda gris para mascotas"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Cama redonda Suave Gris</h3>
+                <p class="producto-desc">
+                  Tejido extra suave, borde elevado y relleno de alta densidad. Ideal para invierno.
+                </p>
+                <p class="producto-price">$67.400</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 3 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/moisess.webp"
+                alt="Moises gris Letto Pets talle mediano"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Moisés Prato Gris Letto Pets</h3>
+                <p class="producto-desc">
+                  Diseño moderno, relleno firme y funda lavable. Pensado para que tu mascota descanse bien.
+                </p>
+                <p class="producto-price">$80.700</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCION 2: TRANSPORTADORAS ============ -->
+    <section class="section-y productos-destacados">
+      <div class="container-site">
+        <header class="section-header">
+          <h2 class="section-title fw-bold">Transportadoras</h2>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Producto 4 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/transportadora.webp"
+                alt="Mochila con cápsula para mascotas Rash-On"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Mochila con cápsula Rash-On</h3>
+                <p class="producto-desc">
+                  Mochila semirrígida con cápsula transparente y ventilación lateral. Hasta 10 kg.
+                </p>
+                <p class="producto-price">$75.700</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 5 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/transportadora1.webp"
+                alt="Transportadora rígida mediana para perros y gatos"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Transportadora Mediana</h3>
+                <p class="producto-desc">
+                  Estructura rígida y traba de seguridad. Ideal para viajes cortos y visitas al veterinario.
+                </p>
+                <p class="producto-price">$90.300</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 6 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/transportadora2.webp"
+                alt="Mochila Beepaw rosa para mascotas pequeñas"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Mochila Beepaw Rosa</h3>
+                <p class="producto-desc">
+                  Mochila liviana con ventana frontal. Medidas 44 × 30 × 17 cm. Ideal para gatos y perros pequeños.
+                </p>
+                <p class="producto-price">$40.800</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCION 3: COMEDEROS Y BEBEDEROS ============ -->
+    <section class="section-y productos-destacados">
+      <div class="container-site">
+        <header class="section-header">
+          <h2 class="section-title fw-bold">Comederos y Bebederos</h2>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Producto 7 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/bebedero.webp"
+                alt="Bebedero interactivo negro para mascotas"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Bebedero Interactivo</h3>
+                <p class="producto-desc">
+                  Sistema de bebida lenta que evita derrames y mantiene el agua más limpia por más tiempo.
+                </p>
+                <p class="producto-price">$25.560</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 8 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/bebederoycomedero.webp"
+                alt="Comedero y bebedero doble de acero inoxidable"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Comedero-Bebedero Doble Trixie</h3>
+                <p class="producto-desc">
+                  Dos cuencos de acero inoxidable con borde siliconado. Cómodo, estable y fácil de limpiar.
+                </p>
+                <p class="producto-price">$12.300</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 9 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/comedero.webp"
+                alt="Comedero de acero inoxidable con base antideslizante"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Comedero de Acero Inoxidable</h3>
+                <p class="producto-desc">
+                  Comedero con base de goma antideslizante. Resistente, duradero y fácil de lavar todos los días.
+                </p>
+                <p class="producto-price">$12.300</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCION 4: PLACAS IDENTIFICATORIAS ============ -->
+    <section class="section-y productos-destacados">
+      <div class="container-site">
+        <header class="section-header">
+          <h2 class="section-title fw-bold">Placas identificatorias</h2>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Producto 10 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/placas.avif"
+                alt="Placa identificatoria con forma de hueso"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Placa con forma de hueso</h3>
+                <p class="producto-desc">
+                  Acero inoxidable con grabado de nombre y teléfono. Distintos colores y tamaños.
+                </p>
+                <p class="producto-price">$9.000</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 11 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/placas1.webp"
+                alt="Placa grabada para collar de mascota"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Placa grabada personalizada</h3>
+                <p class="producto-desc">
+                  Placa plana con grabado doble faz. Ideal para collares de perros y gatos.
+                </p>
+                <p class="producto-price">$9.000</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 12 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/placas2.webp"
+                alt="Llavero con retrato grabado de mascota"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Llavero con retrato de mascota</h3>
+                <p class="producto-desc">
+                  Llavero metálico con grabado de la cara de tu mascota. Ideal como recuerdo o regalo.
+                </p>
+                <p class="producto-price">$9.000</p>
+                <a href="#" class="btn-main btn-block">Más detalles</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCION 5: CLIENTES FELICES ============ -->
+    <section class="section-y productos-destacados">
+      <div class="container-site">
+        <header class="section-header">
+          <h2 class="section-title fw-bold">Clientes felices</h2>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Cliente 1 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/foto.avif"
+                alt="Perro usando placa Silver-L"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Titán</h3>
+                <p class="producto-desc">
+                  ★★★★★<br>
+                  Color y tamaño: Silver-L<br>
+                  Grabado: frente y dorso<br>
+                  “Súper lindo y resistente, ya forma parte de su collar de todos los días.”
+                </p>
+                <a href="#" class="btn-main btn-block">Ver producto similar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cliente 2 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/foto1.jpg"
+                alt="Perra con placa plateada en su collar"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Bella</h3>
+                <p class="producto-desc">
+                  ★★★★★<br>
+                  Color y tamaño: Silver-L<br>
+                  Grabado: doble faz<br>
+                  “Muy buen grabado, se lee perfecto el teléfono y queda hermosa.”
+                </p>
+                <a href="about.html" class="btn-main btn-block">Conocer la tienda</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cliente 3 -->
+          <article class="card-item">
+            <div class="producto-card">
+              <img
+                class="producto-img"
+                src="../assets/img/foto2.jpg"
+                alt="Perro negro con placa identificatoria brillante"
+              >
+              <div class="producto-body">
+                <h3 class="producto-nombre h5">Blacky</h3>
+                <p class="producto-desc">
+                  ★★★★★<br>
+                  Color y tamaño: Silver-L<br>
+                  Grabado: frente y dorso<br>
+                  “La calidad es excelente y llegó rapidísimo. Muy recomendable.”
+                </p>
+                <a href="#" class="btn-main btn-block">Ver producto similar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container-site footer-grid">
+      <div class="footer-brand">
+        <strong>TiendaOnlineFerit</strong>
+        <small> © 2025</small>
+      </div>
+
+      <!-- Redes sociales con animacion (Uiverse.io adaptado) -->
+      <ul class="example-2">
+        <li class="icon-content">
+          <a
+            data-social="whatsapp"
+            aria-label="Whatsapp"
+            href="https://api.whatsapp.com/send?phone=+112067101079"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="filled"></div>
+            <!-- Icono de WhatsApp -->
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C.996 6.513 5.432 2.08 10.884 2.08c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"
+              ></path>
+            </svg>
+          </a>
+          <div class="tooltip">Whatsapp</div>
+        </li>
+
+        <li class="icon-content">
+          <a
+            data-social="facebook"
+            aria-label="Facebook"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="filled"></div>
+            <!-- Icono de Facebook -->
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0 5.37216 0 0 5.37216 0 11.9991 0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714 15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"
+              ></path>
+            </svg>
+          </a>
+          <div class="tooltip">Facebook</div>
+        </li>
+
+        <li class="icon-content">
+          <a
+            data-social="instagram"
+            aria-label="Instagram"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="filled"></div>
+            <!-- Icono de Instagram -->
+            <svg
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942.038-.853.048-1.125.048-3.298s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+              ></path>
+            </svg>
+          </a>
+          <div class="tooltip">Instagram</div>
+        </li>
+        <a class="footer-link" href="index.html">Productos</a>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

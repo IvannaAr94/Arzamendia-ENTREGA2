@@ -1,0 +1,504 @@
+// sass/pages/_home.scss
+// ----------------------
+// Estilos principales del sitio (home + secciones reutilizadasS).
+
+
+@use "../utilidades/variables" as *;
+@use "../utilidades/mixin" as *;
+
+/* ==============================
+    VARIABLES CSS (atadas a SASS)
+    ============================== */
+    /* Esto permite usar var(--color1) en CSS,
+    pero controlado por variables SASS. */
+    :root {
+    --color1: #{$color1};
+    --color2: #{$color2};
+    --color3: #{$color3};
+    --color4: #{$color4};
+    --color5: #{$color5};
+
+    --bg-page: #{$color-fondo};
+    --bg-header: #{$color-header};
+    --bg-footer: #{$color-footer};
+
+    --text-light: #{$texto-claro};
+    --text-dark: #{$texto-oscuro};
+
+    --radius-lg: #{$radius-lg};
+    --radius-md: #{$radius-md};
+    --radius-sm: #{$radius-sm};
+
+    --shadow-soft: #{$shadow-soft};
+    --shadow-card: #{$shadow-card};
+    }
+
+    /* ==============================
+    SECCION HERO / PORTADA
+    ============================== */
+
+    .hero-section {
+    /* Fondo con radial + degradado usando la paleta */
+    background:
+        radial-gradient(
+        900px 500px at 20% -10%,
+        rgba(162, 95, 137, 0.28),
+        transparent 70%
+        ),
+        linear-gradient(
+        to bottom right,
+        $color5 0%,
+        #ffffff 60%
+        );
+    color: $color1;
+    }
+
+    /* Titulo principal del hero */
+    .hero-title {
+    color: $color1;
+    }
+
+    /* Texto resaltado con degradado en el nombre de la tienda */
+    .brand-accent {
+    background-image: linear-gradient(90deg, $color3, $color4);
+
+    // Fallback para navegadores sin soporte de background-clip:text
+    color: $color3;
+
+    // Clip estándar + WebKit
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    // Si soporta clip:text, el color viene del fondo
+    color: transparent;
+
+    font-weight: 700;
+    }
+
+    /* Subtitulo del hero */
+    .hero-subtitle {
+    color: $color2;
+    font-size: 1.1rem;
+    max-width: 40ch;
+    }
+
+    /* ==============================
+    BOTONES PERSONALIZADOS
+    ============================== */
+
+    /* Boton principal: reutiliza el mixin btn-primario */
+    .btn-main {
+    @include btn-primario;
+    }
+
+    /* Boton solo con borde, estilo secundario */
+    .btn-outline-main {
+    display: inline-block;
+    background-color: transparent;
+    color: $color3;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: $radius-md;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    border: 2px solid $color3;
+    transition: all 0.2s ease;
+    box-shadow: $shadow-soft;
+
+    &:hover {
+        background-color: $color3;
+        color: $texto-claro;
+        text-decoration: none;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+    }
+
+    /* ==============================
+    BOX MODEL DEMO (recuadro)
+    ============================== */
+
+    .box-example {
+    background-color: $texto-claro;
+    border: 2px solid $color3;
+    border-radius: $radius-md;
+    padding: 1rem 1.25rem; // padding (box model)
+    margin-top: 1rem;      // margin (box model)
+    max-width: 32ch;
+    color: $color1;
+    font-size: 0.9rem;
+    box-shadow: $shadow-soft;
+    }
+
+    /* ==============================
+    SECCION PRODUCTOS DESTACADOS
+    ============================== */
+
+    .productos-destacados {
+    background-color: #cc92e0;
+    color: $texto-oscuro;
+    }
+
+    /* Titulo y descripcion de seccion */
+    .section-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    }
+
+    .section-title {
+    color: $color1;
+    margin: 0 0 0.25rem 0;
+    }
+
+    .section-desc {
+    font-size: 0.95rem;
+    color: $color2;
+    text-align: center;
+    max-width: 50ch;
+    margin: 0 auto;
+    opacity: 0.85;
+    }
+
+    /* Tipografia de los productos */
+    .producto-nombre {
+    color: $color1;
+    font-weight: 600;
+    }
+
+    .producto-desc {
+    color: $color2;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    }
+
+    .producto-price {
+    color: $color1;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    }
+
+    /* ==============================
+    LAYOUT GENERAL (SIN BOOTSTRAP)
+    ============================== */
+
+    /* Espaciado vertical de secciones */
+    .section-y {
+    padding-block: 3rem;
+    }
+
+    /* Contenedor central reutilizable */
+    .container-site {
+    width: min(1100px, 92%);
+    margin-inline: auto;
+    }
+
+    /* Grid del hero: texto + imagen */
+    .grid-hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    }
+
+    /* Imagen dentro de la columna del hero */
+    .hero-col {
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    }
+
+    /* Columna de imagen del hero centrada */
+    .hero-media {
+    text-align: center;
+    }
+
+    /* Fila de botones del hero */
+    .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    }
+
+    /* ==============================
+    CARDS: BASE COMPARTIDA + EXTEND
+    ============================== */
+
+    /* Placeholder con estilos base de card
+    (no genera una clase en CSS, solo se extiende) */
+    %card-base {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: $shadow-soft;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    background: #fff;
+    }
+
+    /* Grid de cards */
+    .cards-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr; // mobile: una columna
+    }
+
+    .card-item {
+    display: block;
+    }
+
+    /* Cards de producto: extiende la base */
+    .producto-card {
+    @extend %card-base;
+    }
+
+    /* Imagen de producto */
+    .producto-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: $color5;
+    border-bottom: 2px solid $color5;
+    }
+
+    /* Contenido interno de la card */
+    .producto-body {
+    padding: 1rem 1rem 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+    }
+
+    /* Boton ocupa todo el ancho de la card */
+    .btn-block {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    }
+
+    /* ==============================
+    TARJETA DE INFORMACION EXTRA
+    ============================== */
+
+    .info-wrap {
+    margin-top: 2rem;
+    display: grid;
+    place-items: center;
+    }
+
+    /* Card de informacion: tambien extiende la base y suma algunos ajustes propios */
+    .info-card {
+    @extend %card-base;
+
+    // Como info-card usa grid, sobreescribi un par de cosas
+    width: min(760px, 100%);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid $color4;
+    box-shadow: $shadow-card;
+    }
+
+    .info-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: $radius-md;
+    border: 2px solid $color4;
+    background-color: $texto-claro;
+    }
+
+    /* Texto destacado con color del header */
+    .text-header {
+    color: $color1;
+    }
+
+    /* Espaciado utilitario simple */
+    .mt-4 {
+    margin-top: 1rem;
+    }
+
+    /* ==============================
+    ANIMACION: LOADER (Decorativa, se puede usar en otra pag)
+    ============================== */
+
+    .loader {
+    --main-size: 4em;
+    --text-color: #fbfbfb;
+    --shine-color: #6600ff;
+    --shadow-color: #e111f8de;
+
+    @include flex-center(column, 0.5rem);
+
+    overflow: hidden;
+    user-select: none;
+    position: relative;
+    font-size: var(--main-size);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-color);
+    width: 7.3em;
+    height: 1em;
+    filter: drop-shadow(0 0 0.05em var(--shine-color));
+
+    .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        position: absolute;
+
+        /* Cada “rebanada” del texto tiene un tamaño y opacidad distinta */
+        &:nth-child(1) {
+        clip-path: polygon(0% 0%, 11.11% 0%, 11.11% 100%, 0% 100%);
+        font-size: calc(var(--main-size) / 20);
+        margin-left: -2.1em;
+        opacity: 0.6;
+        }
+
+        &:nth-child(2) {
+        clip-path: polygon(11.11% 0%, 22.22% 0%, 22.22% 100%, 11.11% 100%);
+        font-size: calc(var(--main-size) / 16);
+        margin-left: -0.98em;
+        opacity: 0.7;
+        }
+
+        &:nth-child(3) {
+        clip-path: polygon(22.22% 0%, 33.33% 0%, 33.33% 100%, 22.22% 100%);
+        font-size: calc(var(--main-size) / 13);
+        margin-left: -0.33em;
+        opacity: 0.8;
+        }
+
+        &:nth-child(4) {
+        clip-path: polygon(33.33% 0%, 44.44% 0%, 44.44% 100%, 33.33% 100%);
+        font-size: calc(var(--main-size) / 11);
+        margin-left: -0.05em;
+        opacity: 0.9;
+        }
+
+        &:nth-child(5) {
+        clip-path: polygon(44.44% 0%, 55.55% 0%, 55.55% 100%, 44.44% 100%);
+        font-size: calc(var(--main-size) / 10);
+        margin-left: 0;
+        opacity: 1;
+        }
+
+    &:nth-child(6) {
+        clip-path: polygon(55.55% 0%, 66.66% 0%, 66.66% 100%, 55.55% 100%);
+        font-size: calc(var(--main-size) / 11);
+        margin-left: 0.05em;
+        opacity: 0.9;
+        }
+
+        &:nth-child(7) {
+        clip-path: polygon(66.66% 0%, 77.77% 0%, 77.77% 100%, 66.66% 100%);
+        font-size: calc(var(--main-size) / 13);
+        margin-left: 0.33em;
+        opacity: 0.8;
+        }
+
+        &:nth-child(8) {
+        clip-path: polygon(77.77% 0%, 88.88% 0%, 88.88% 100%, 77.77% 100%);
+        font-size: calc(var(--main-size) / 16);
+        margin-left: 0.98em;
+        opacity: 0.7;
+        }
+
+        &:nth-child(9) {
+        clip-path: polygon(88.88% 0%, 100% 0%, 100% 100%, 88.88% 100%);
+        font-size: calc(var(--main-size) / 20);
+        margin-left: 2.1em;
+        opacity: 0.6;
+        }
+
+        span {
+        // controlo velocidad: 4s = duracion del ciclo
+        animation:
+            scrolling 4s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite,
+            shadow 4s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite;
+        }
+    }
+
+    .line {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 0.05em;
+    width: calc(var(--main-size) / 2);
+    margin-top: 0.9em;
+    border-radius: 0.05em;
+
+    &::before,
+        &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: var(--text-color);
+        }
+
+        &::before {
+        opacity: 0.3;
+        }
+
+        &::after {
+        border-radius: 0.05em;
+        transform: translateX(-90%);
+        animation: wobble 2s cubic-bezier(0.5, 0.8, 0.5, 0.2) infinite;
+        }
+    }
+    }
+
+/* Animaciones clave del loader */
+@keyframes wobble {
+    0% {
+        transform: translateX(-90%);
+    }
+    50% {
+        transform: translateX(90%);
+    }
+    100% {
+        transform: translateX(-90%);
+    }
+    }
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+    }
+
+@keyframes shadow {
+    0% {
+        background-position: -98% 0;
+    }
+    100% {
+        background-position: 102% 0;
+    }
+    }
+
+/* ==============================
+    UTILIDADES GENERADAS CON @each ( de operador de SASS)
+   ============================== */
+
+$espaciados: (
+    1: 0.5rem,
+    2: 1rem,
+    3: 1.5rem
+    );
+
+// Genera las clases .mt-1, .mt-2, .mt-3
+@each $clave, $valor in $espaciados {
+    .mt-#{$clave} {
+        margin-top: $valor;
+    }
+}

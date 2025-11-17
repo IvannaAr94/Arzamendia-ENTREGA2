@@ -1,0 +1,29 @@
+// sass/utilidades/_variables.scss 
+// --------------------------------
+// Variables SASS del proyecto /* ahora $color-fondo, $color-texto y $font-base salen de acá. */
+
+// Colores base
+$color1: #630e94be; // violeta oscuro (texto principal / header fondo)
+$color2: #654166;   // violeta medio
+$color3: #a25f89;   // rosa-violeta medio
+$color4: #d571db;   // rosa vibrante
+$color5: #c077c5;   // rosa pastel claro
+
+$color-fondo: #b4a9a9;
+$color-header: $color1;
+$color-footer: $color1;
+
+$texto-claro: #faf8f8;
+$texto-oscuro: #5c2578;
+
+// Tipografia
+$font-base: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+// Bordes redondeados
+$radius-lg: 1rem;
+$radius-md: .75rem;
+$radius-sm: .5rem;
+
+// Sombras
+$shadow-soft: 0 10px 24px rgba(0,0,0,.08);
+$shadow-card: 0 16px 32px rgba(65,48,75,.15)

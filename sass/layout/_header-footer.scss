@@ -1,0 +1,248 @@
+// sass/layout/_header-footer.scss
+// -------------------------------
+// Estilos del header, navbar y footer del sitio.
+// -------------------------------
+
+
+@use "../utilidades/variables" as *;
+
+/* ==============================
+    HEADER / NAVBAR
+    ============================== */
+
+    /* Fondo y color de texto del header */
+    .bg-header {
+    background-color: $color-header;
+    color: $texto-claro;
+    }
+
+    /* Logo del header */
+    .brand-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: cover; // Ajusta la imagen al contenedor
+    }
+
+    /* Texto de marca en el header */
+    .brand-text {
+    color: $texto-claro;
+    font-size: 1rem;
+    line-height: 1.2;
+    }
+
+    /* Navbar de Bootstrap con ajustes propios */
+    .navbar-dark {
+    .navbar-nav {
+        .nav-link {
+        color: $texto-claro;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &.active,
+        &:hover,
+        &:focus {
+            color: $color4; // Rosa vibrante en hover/activo
+            text-decoration: none;
+        }
+        }
+    }
+
+    /* Pequeño realce al boton hamburguesa */
+    .navbar-toggler {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover,
+        &:focus {
+        transform: scale(1.05);
+        border-color: $color4;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+        }
+    }
+    }
+
+    /* ==============================
+    FOOTER (estructura base)
+    ============================== */
+
+    .site-footer {
+    padding-block: 1.25rem;
+    background: $color-footer;
+    color: $texto-claro;
+    }
+
+    /* Grid del footer:
+    - Mobile: 1 columna
+    - Desktop: se ajusta en mq-desktop
+    */
+    .footer-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+    }
+
+    /* Fila de links en el footer */
+    .footer-linkrow {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+
+    /* Texto general del footer */
+    .text-footer {
+    color: $texto-claro;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    }
+
+    /* ==============================
+    ANIMACION EN LINKS DEL FOOTER
+    (hover en Instagram / Facebook..)
+    ============================== */
+
+    /* Pequeño movimiento "rebote" para llamar la atencion en hover */
+    @keyframes footer-bounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-2px); }
+    60%  { transform: translateY(1px); }
+    100% { transform: translateY(0); }
+    }
+
+    /* Links del footer + animacion en hover */
+    .footer-link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+
+    &:hover {
+        text-decoration: underline;
+        animation: footer-bounce 0.4s ease; // animación en hover
+    }
+    }
+
+    /* ==============================
+    ICONOS SOCIALES ANIMADOS (Uiverse.io)
+    WhatsApp / Facebook / Instagram
+    ============================== */
+
+    /* Lista sin viñetas y con iconos centrados */
+    .example-2 {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    /* Cada icono individual */
+    .icon-content {
+        position: relative;
+        margin: 0 10px;
+
+        /* Tooltip emergente */
+        .tooltip {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        }
+
+        /* Tooltip visible en hover */
+        &:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        top: -50px;
+        }
+
+        /* Boton redondo del icono */
+        a {
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        background-color: #fff;
+        color: $color1;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+            box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.12);
+            color: white;
+        }
+
+        svg {
+            position: relative;
+            z-index: 2;
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Fondo animado que sube */
+        .filled {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 0;
+
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        &:hover .filled {
+            height: 100%;
+        }
+        }
+
+        /* Colores personalizados por red */
+
+        a[data-social="whatsapp"] {
+        .filled,
+        ~ .tooltip {
+            background-color: #128c7e;
+        }
+        }
+
+        a[data-social="facebook"] {
+        .filled,
+        ~ .tooltip {
+            background-color: #3b5998;
+        }
+        }
+
+        a[data-social="instagram"] {
+        .filled,
+        ~ .tooltip {
+            background: linear-gradient(
+            45deg,
+            #405de6,
+            #5b51db,
+            #b33ab4,
+            #c135b4,
+            #e1306c,
+            #fd1f1f
+            );
+        }
+        }
+    }
+    }
